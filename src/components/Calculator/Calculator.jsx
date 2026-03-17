@@ -10,12 +10,11 @@ export function Calculator() {
   const addition = number1 + number2;
   const subtraction = number1 - number2;
   const multiplication = number1 * number2;
-  const division = number2 !== 0 
-    ? (number1 / number2).toFixed(2) 
-    : "Infinity";
+  const division =
+    number2 !== 0 ? (number1 / number2).toFixed(2) : "Infinity";
 
   return (
-    <div style={styles.container}>
+    <div>
       <h1>Real-Time Calculator</h1>
 
       <input
@@ -23,16 +22,18 @@ export function Calculator() {
         placeholder="Enter first number"
         value={num1}
         onChange={(e) => setNum1(e.target.value)}
-        style={styles.input}
       />
+
+      <br /><br />
 
       <input
         type="number"
         placeholder="Enter second number"
         value={num2}
-        onChange={(e) => setNum2(e.target.value)}  
-        style={styles.input}
+        onChange={(e) => setNum2(e.target.value)}
       />
+
+      <br /><br />
 
       <div>
         <p>Addition: {addition}</p>
@@ -43,19 +44,3 @@ export function Calculator() {
     </div>
   );
 }
-
-const styles = {
-  container: {
-    width: "300px",
-    margin: "40px auto",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "10px",
-    textAlign: "center",
-  },
-  input: {
-    width: "100%",
-    padding: "8px",
-    margin: "10px 0",
-  },
-};
